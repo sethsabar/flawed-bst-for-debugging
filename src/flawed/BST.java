@@ -54,9 +54,6 @@ public class BST {
    * @return the new root of the Fixed.BST
    */
   private Node insertHelper(Node node, int key) {
-    if (node == null) {
-      return new Node(key);
-    }
     if (key < node.key) {
       node.left = insertHelper(node.left, key);
     } else if (key > node.key) {
@@ -100,16 +97,16 @@ public class BST {
       return null;
     }
     if (key < node.key) {
-      node.left = deleteHelper(node.left, key);
+      deleteHelper(node.left, key);
     } else if (key > node.key) {
-      node.right = deleteHelper(node.right, key);
+      deleteHelper(node.right, key);
     } else {
       if (node.left == null) {
         return node.right;
       } else if (node.right == null) {
         return node.left;
       } else {
-        node.key = minValue(node.right);
+        node.key = minValue(node.left);
         node.right = deleteHelper(node.right, node.key);
       }
     }
