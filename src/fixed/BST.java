@@ -8,7 +8,7 @@ public class BST {
   private Node root;
 
   /**
-   * Constructs an empty Fixed.BST.
+   * Constructs an empty BST.
    */
   public BST() {
     root = null;
@@ -38,7 +38,7 @@ public class BST {
   }
 
   /**
-   * Inserts a new key into the Fixed.BST.
+   * Inserts a new key into the BST.
    *
    * @param key the key to insert
    */
@@ -66,7 +66,7 @@ public class BST {
   }
 
   /**
-   * a method the deletes a key from the Fixed.BST.
+   * a method the deletes a key from the BST.
    *
    * @param key the key to delete
    */
@@ -89,7 +89,7 @@ public class BST {
   }
 
   /**
-   * a helper method for delete() which deletes a key from the Fixed.BST.
+   * a helper method for delete() which deletes a key from the BST.
    *
    * @param node the node to delete the key from
    * @param key  the key to delete

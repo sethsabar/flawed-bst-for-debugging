@@ -4,11 +4,11 @@ package flawed;
  * a class that implements a binary search tree.
  */
 public class BST {
-  // the root Node of the Fixed.BST
+  // the root Node of the BST
   private Node root;
 
   /**
-   * Constructs an empty Fixed.BST.
+   * Constructs an empty BST.
    */
   public BST() {
     root = null;
@@ -38,7 +38,7 @@ public class BST {
   }
 
   /**
-   * Inserts a new key into the Fixed.BST.
+   * Inserts a new key into the BST.
    *
    * @param key the key to insert
    */
@@ -51,7 +51,7 @@ public class BST {
    *
    * @param node the current node
    * @param key  the key to insert
-   * @return the new root of the Fixed.BST
+   * @return the new root of the BST
    */
   private Node insertHelper(Node node, int key) {
     if (key < node.key) {
@@ -63,7 +63,7 @@ public class BST {
   }
 
   /**
-   * a method the deletes a key from the Fixed.BST.
+   * a method the deletes a key from the BST.
    *
    * @param key the key to delete
    */
@@ -86,7 +86,7 @@ public class BST {
   }
 
   /**
-   * a helper method for delete() which deletes a key from the Fixed.BST.
+   * a helper method for delete() which deletes a key from the BST.
    *
    * @param node the node to delete the key from
    * @param key  the key to delete
@@ -97,9 +97,9 @@ public class BST {
       return null;
     }
     if (key < node.key) {
-      deleteHelper(node.left, key);
+      node.left = deleteHelper(node.left, key);
     } else if (key > node.key) {
-      deleteHelper(node.right, key);
+      node.right = deleteHelper(node.right, key);
     } else {
       if (node.left == null) {
         return node.right;
@@ -172,4 +172,5 @@ public class BST {
       return searchHelper(node.right, key);
     }
   }
+
 }
